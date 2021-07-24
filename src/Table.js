@@ -1,28 +1,32 @@
 import React, { Component } from 'react'
 
+const TableHeader = () => {
+    return (
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Job</th>
+          </tr>
+        </thead>
+    )
+}
+
+const TableBody = () => {
+    // we remove the data in html tags to app as an array of objects
+    
+    return <tbody />
+                
+    }
+}
+
 class Table extends Component {
     render() {
         return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Job</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Charlie</td>
-                    <td>Janitor</td>
-                </tr>
-                <tr>
-                    <td>Mac</td>
-                    <td>Bouncer</td>
-                </tr>
-            </tbody>
-        </table>
+            <table>
+                <TableHeader />
+                <TableBody />
+             </table>
         )
-                
     }
 }
 
