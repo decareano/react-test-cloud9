@@ -28,7 +28,7 @@ class App extends Component {
       ]
     return (
       <div className="container">
-        <Table charData = { characters }  //expression for array of characters
+        <Table charData = { characters }  />    
        
       </div>
     )
