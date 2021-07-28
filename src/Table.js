@@ -13,6 +13,30 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
+<<<<<<< HEAD
+    const rows = props.charData.map((row, index) => {
+        return (
+          <tr key={index}>
+            <td>{row.name}</td>
+            <td>{row.job}</td>
+          </tr> 
+        )
+    })
+    
+    
+    return <tbody>{rows}</tbody>
+                
+    
+}
+
+class Table extends Component {
+    render() {
+        const {charData} = this.props
+        return (
+            <table>
+                <TableHeader />
+                <TableBody charData={charData}/>
+=======
     // we remove the data in html tags to app as an array of objects
     const rows =  props.charData.map((row, index) => {
         return (
@@ -34,6 +58,7 @@ const Table = (props) => {
             <table>
                 <TableHeader />
                 <TableBody charData={charData} removeChar={removeChar}/>
+>>>>>>> master
              </table>
         )
     
