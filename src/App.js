@@ -8,36 +8,51 @@ import Table from './Table'
 
 
 class App extends Component {
+  render() {
 
-  state = {
-    characters: [],
+    const characters = [
+      {
+      date: 'August 13, 2021',
+      reading: "120-80",
+      },
+      {
+        date: "August 14, 2021",
+        reading: "125-83",
+      },
+      {
+        date: "August 15, 2021",
+        reading: "129-75",
+      },
+      {
+        date: "August 16, 2021",
+        reading: "126-75",
+      },
+      {
+        date: "August 8, 2021",
+        reading: "126-75",
+      },
+      {
+        date: "August 7, 2021",
+        reading: "126-75",
+      },
+    ]
 
-  }
-
-
-removeChar = (index) => {
-  const {characters} = this.state
-  
-  this.setState({
-    characters: characters.filter((character, i) => {
-      return i !== index
+    characters.sort((a, b) => {
+      let da = new Date(a.date),
+          db = new Date(b.date)
+        return db - da
     })
-  })
-}
 
-handleSubmit = (character) => {
-  this.setState({characters: [...this.state.characters, character]})
-}
-
-render() {
-  const {characters} = this.state
-  return (
-    <div className="container">
-      <Table charData={characters} removeChar={this.removeChar} />
-      <Form handleSubmit={this.handleSubmit} />
-    </div>
-  )
-}
+   
+    
+    
+    return (
+      <div className="container">
+        <Table marceloData={characters} />
+        
+      </div>
+    )
+  }
 }
 
 export default App

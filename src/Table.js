@@ -1,44 +1,42 @@
 import React from 'react'
 
 const TableHeader = () => {
-    return (
+   return (
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Remove</th>
-          </tr>
+            <tr>
+                <th>Date</th>
+                <th>Reading</th>
+                <th>Remove</th>
+            </tr>
         </thead>
     )
 }
 
 const TableBody = (props) => {
-
-    // we remove the data in html tags to app as an array of objects
-    const rows =  props.charData.map((row, index) => {
-        return (
+    const filas = props.marceloData.map((fila, index) => {
+        return(
             <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
-                <td><button onClick={() => props.removeChar(index)}>Delete</button></td>
+                <td>{fila.date}</td>
+                <td>{fila.reading}</td>
             </tr>
         )
     })
-    
-    return <tbody>{rows}</tbody>
-                
+    return <tbody>{filas}</tbody>
 }
 
-const Table = (props) => {
-    const {charData, removeChar} = props
+class Table extends React.Component {
+    render() {
+        const {marceloData} = this.props
         return (
-            <table>
-                <TableHeader />
-                <TableBody charData={charData} removeChar={removeChar}/>
+            <div className="mydiv">
+            <TableHeader />
+            <TableBody marceloData={marceloData} />
+            </div>
 
-             </table>
         )
-    
+    }
+
+
 }
 
 export default Table
