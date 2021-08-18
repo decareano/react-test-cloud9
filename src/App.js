@@ -44,11 +44,11 @@ class App extends Component {
     })
 
    
-    
+    // characters.filter(character => character.date > "August 14, 2021")
     
     return (
       <div className="container">
-        <Table marceloData={characters} />
+        <Table marceloData={characters.filter(character => character.date >= "August 17, 2021")} />
         
       </div>
     )
