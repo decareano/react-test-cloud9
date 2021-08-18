@@ -14,7 +14,9 @@ class Form extends Component {
     }
     
     render() {
-        return (null)
+
+        return ( <form class="form-inline"> </form>)
+
     }
     
 }
