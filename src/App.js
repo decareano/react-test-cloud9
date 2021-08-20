@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Form from './Form'
 import './App.css';
 import Table from './Table'
+import Firebase from 'firebase'
 
 
 
@@ -13,44 +14,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: [
-        {
-        date: 'August 13, 2021',
-        reading: "120-80",
-        },
-        {
-          date: "August 14, 2021",
-          reading: "125-83",
-        },
-        {
-          date: "August 15, 2021",
-          reading: "129-75",
-        },
-        {
-          date: "August 16, 2021",
-          reading: "126-75",
-        },
-        {
-          date: "August 8, 2021",
-          reading: "126-75",
-        },
-        {
-          date: "August 7, 2021",
-          reading: "126-75",
-        },
-        {
-          date: "July 7, 2021",
-          reading: "123-72",
-        },
-        {
-          date: "July 13, 2021",
-          reading: "126-75",
-        },
-        {
-          date: "July 23, 2021",
-          reading: "132-67",
-        },
-      ]
+      // we are gonna update the data through the form
+      characters: []
     }
   }
 
@@ -71,6 +36,7 @@ class App extends Component {
       })
     
   }
+  
   render() {
 
     let {characters} = this.state
@@ -90,8 +56,8 @@ class App extends Component {
       <div className="container">
         
         {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
-        <Table marceloData={characters} removeCharacter={this.removeCharacter}/>
-       
+        <Table marceloData={characters} getUserData={this.getUserData} />
+        <Form />
       </div>
      
     )
