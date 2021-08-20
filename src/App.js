@@ -31,10 +31,11 @@ class App extends Component {
           
           return i !== index
         })
-        
-        
       })
-    
+  }
+
+  handleSubmit = (character) => {
+    this.setState({characters: [...this.state.characters, character]})
   }
   
   render() {
@@ -56,8 +57,8 @@ class App extends Component {
       <div className="container">
         
         {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
-        <Table marceloData={characters} getUserData={this.getUserData} />
-        <Form />
+        <Table marceloData={characters} removeCharacter={this.removeCharacter} />
+        <Form handleSubmit={this.handleSubmit} />
       </div>
      
     )

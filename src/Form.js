@@ -17,11 +17,16 @@ class Form extends Component {
         })
     }
 
+    submitForm = () => {
+        this.props.handleSubmit(this.state)
+        this.setState(this.initialState)
+    }
+
     render() {
         const { date, reading } = this.state
 
         return (
-            <form>
+            <form class="form-inline">
                 <label htmlFor="date">Month-Day</label>
                 <input
                 type="text"
@@ -39,8 +44,8 @@ class Form extends Component {
                     onChange={this.handleChange} />
 
                 <input className="btn btn-primary"
-            type="button"
-            value="Submit"
+                    type="button"
+                    value="Submit"
                     onClick={this.submitForm} />    
             </form>
         )
