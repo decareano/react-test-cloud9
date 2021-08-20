@@ -18,23 +18,26 @@ const TableBody = (props) => {
             <tr key={index}>
                 <td>{fila.date}</td>
                 <td>{fila.reading}</td>
+                <td><button type="button" className="btn btn-primary" onClick={() => props.removeCharacter(index)}>Delete</button></td>
             </tr>
         )
     })
     return <tbody>{filas}</tbody>
 }
 
-class Table extends React.Component {
-    render() {
-        const {marceloData} = this.props
+const Table = (props) => {
+    
+        const {marceloData, removeCharacter } = props
+        
+        
         return (
-            <div className="mydiv">
+            <table>
             <TableHeader />
-            <TableBody marceloData={marceloData} />
-            </div>
+            <TableBody marceloData={marceloData} removeCharacter={removeCharacter} />
+            </table>
 
         )
-    }
+   
 
 
 }
