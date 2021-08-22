@@ -2,18 +2,22 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
-   initialState = {
-       date: '',
-       reading: '',
-   }
-   state = this.initialState
+    
+        initialState = {
+            date: '',
+            reading: '',
+        }
+        state = this.initialState
+        
+    
 
-// the date is the key and value is the input....hmmmmmm
+
+
     handleChange = (event) => {
-        const {date, value} = event.target
+        const {name, value} = event.target
 
         this.setState({
-            [date]: value
+            [name]: value
         })
     }
 
@@ -23,24 +27,24 @@ class Form extends Component {
     }
 
     render() {
-        const { date, reading } = this.state
+        const { date, reading } = this.state;
 
         return (
-            <form class="form-inline">
+            <form className="form-inline">
                 <label htmlFor="date">Month-Day</label>
                 <input
-                type="text"
+                    type="text"
                     name="date"
                     id="date"
                     //use defaultValue instead of value
-                    defaultValue={date}
+                    value={date}
                     onChange={this.handleChange} />
                 <label htmlFor="reading">Blood Pressure Reading</label>
                 <input
                     type="text"
                     name="reading"
                     id="reading"
-                    defaultValue={reading}
+                    value={reading}
                     onChange={this.handleChange} />
 
                 <input className="btn btn-primary"

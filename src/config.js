@@ -1,8 +1,13 @@
+
+
 const config = {
-    apiKey: "AIzaSyA4QGUX9E72rrKdHVdpEb1Lrz9zwXjPdRc",
-    authDomain: "reactandfirebase-de374.firebaseapp.com",
-    databaseURL: "https://reactandfirebase-de374-default-rtdb.firebaseio.com"
-};
+        apiKey: "AIzaSyBr_Ne5wNrHvF9GYDQ8DFmigzP1_OEip4o",
+        authDomain: "fir-dbreact-e6eb6.firebaseapp.com",
+        databaseURL: "https://fir-dbreact-e6eb6-default-rtdb.firebaseio.com"
+        
+}
 
 export default config
-firebase.initializeApp(config);
+
+
+  
