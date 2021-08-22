@@ -19,11 +19,45 @@ class Form extends Component {
         this.setState({
             [name]: value
         })
+
     }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        let name = this.refs.name.value;
+        let role = this.refs.role.value;
+        let uid = this.refs.uid.value;
+    
+        if (uid && name && role) {
+          const { developers } = this.state;
+          const devIndex = developers.findIndex(data => {
+            return data.uid === uid;
+          });
+          developers[devIndex].name = name;
+          developers[devIndex].role = role;
+          this.setState({ developers });
+        } else if (name && role) {
+          const uid = new Date().getTime().toString();
+          const { developers } = this.state;
+          developers.push({ uid, name, role });
+          this.setState({ developers });
+        }
+    
+        this.refs.name.value = "";
+        this.refs.role.value = "";
+        this.refs.uid.value = "";
+      };
 
     submitForm = () => {
         this.props.handleSubmit(this.state)
         this.setState(this.initialState)
+    }
+    removeData = character => {
+        const { characters } = this.state;
+        const newState = characters.filter(data => {
+          return data.uid !== character.uid;
+        });
+        this.setState({ characters: newState });
     }
 
     render() {
@@ -37,14 +71,14 @@ class Form extends Component {
                     name="date"
                     id="date"
                     //use defaultValue instead of value
-                    value={date}
+                    value={this.date}
                     onChange={this.handleChange} />
                 <label htmlFor="reading">Blood Pressure Reading</label>
                 <input
                     type="text"
                     name="reading"
                     id="reading"
-                    value={reading}
+                    value={this.reading}
                     onChange={this.handleChange} />
 
                 <input className="btn btn-primary"
@@ -55,6 +89,7 @@ class Form extends Component {
         )
     }
 }
+
 
 
 export default Form
