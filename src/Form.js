@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
 
 class Form extends Component {
     
@@ -38,10 +39,16 @@ class Form extends Component {
 
     render() {
         const { date, reading } = this.state;
+        
 
         return (
-            
-            <form >
+            <>
+               <div className="col-xl-12">
+        <h1>Marcelo's Blood Pressure Readings</h1>
+      </div>
+
+                <div className="goDown" />
+           
                 <label htmlFor="date">Month-Day</label>
                 <input
                     type="text"
@@ -63,9 +70,9 @@ class Form extends Component {
                     value="Submit"
                     onClick={this.submitForm} />  
 
-            </form> 
+               <div />
             
-            
+            </>
   
             
             
