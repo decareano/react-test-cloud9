@@ -22,31 +22,7 @@ class Form extends Component {
 
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
-        let name = this.refs.name.value;
-        let role = this.refs.role.value;
-        let uid = this.refs.uid.value;
     
-        if (uid && name && role) {
-          const { developers } = this.state;
-          const devIndex = developers.findIndex(data => {
-            return data.uid === uid;
-          });
-          developers[devIndex].name = name;
-          developers[devIndex].role = role;
-          this.setState({ developers });
-        } else if (name && role) {
-          const uid = new Date().getTime().toString();
-          const { developers } = this.state;
-          developers.push({ uid, name, role });
-          this.setState({ developers });
-        }
-    
-        this.refs.name.value = "";
-        this.refs.role.value = "";
-        this.refs.uid.value = "";
-      };
 
     submitForm = () => {
         this.props.handleSubmit(this.state)
@@ -64,28 +40,38 @@ class Form extends Component {
         const { date, reading } = this.state;
 
         return (
-            <form className="form-inline">
+            
+            <form >
                 <label htmlFor="date">Month-Day</label>
                 <input
                     type="text"
                     name="date"
                     id="date"
                     //use defaultValue instead of value
-                    value={this.date}
+                    value={date}
                     onChange={this.handleChange} />
                 <label htmlFor="reading">Blood Pressure Reading</label>
                 <input
                     type="text"
                     name="reading"
                     id="reading"
-                    value={this.reading}
+                    value={reading}
                     onChange={this.handleChange} />
 
                 <input className="btn btn-primary"
                     type="button"
                     value="Submit"
-                    onClick={this.submitForm} />    
-            </form>
+                    onClick={this.submitForm} />  
+
+            </form> 
+            
+            
+  
+            
+            
+            
+
+            
         )
     }
 }
