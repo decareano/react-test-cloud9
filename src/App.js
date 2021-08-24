@@ -158,12 +158,14 @@ class App extends React.Component {
   render() {
     const { characters } = this.state;
     return (
-      
+          
             <div className="container">
               
-              {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
-              <Table marceloData={characters} removeCharacter={this.removeCharacter} />
               <Form handleSubmit={this.handleSubmit} />
+              {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
+              
+              <Table marceloData={characters} removeCharacter={this.removeCharacter} />
+              
             </div>
            
           )
