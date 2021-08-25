@@ -156,7 +156,7 @@ class App extends React.Component {
 
   
   render() {
-    const { characters } = this.state;
+    const  { characters } = this.state;
     return (
           
             <div className="container">
@@ -164,16 +164,24 @@ class App extends React.Component {
               <Form handleSubmit={this.handleSubmit} />
               {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
               
-              <Table marceloData={characters} removeCharacter={this.removeCharacter} />
+              <Table marceloData={characters.sort((a, b) => {
+               
+                    let da = new Date(a.date),
+                    db = new Date(b.date)
+                    return db - da
+                    })
+              }  />
+              
               
             </div>
            
           )
+
+          
      
     
   }
-}
-
+  }
 
 
 export default App

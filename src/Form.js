@@ -30,13 +30,15 @@ class Form extends Component {
         this.props.handleSubmit(this.state)
         this.setState(this.initialState)
     }
-    removeData = character => {
-        const { characters } = this.state;
-        const newState = characters.filter(data => {
-          return data.uid !== character.uid;
-        });
-        this.setState({ characters: newState });
-    }
+
+    
+    // removeData = character => {
+    //     const { characters } = this.state;
+    //     const newState = characters.filter(data => {
+    //       return data.uid !== character.uid;
+    //     });
+    //     this.setState({ characters: newState });
+    // }
 
     render() {
         const { date, reading, pulse} = this.state;
