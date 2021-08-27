@@ -104,6 +104,9 @@ import config from "./config";
 import Form from "./Form"
 import Table from './Table'
 
+import LoginButton from './login-button';
+import LogoutButton from './logout-button';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -155,12 +158,17 @@ class App extends React.Component {
     }
 
   
+
+  
   render() {
     const  { characters } = this.state;
+    
     return (
           
             <div className="container">
+              <LoginButton />
               
+              <LogoutButton /> 
               <Form handleSubmit={this.handleSubmit} />
               {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
               
@@ -170,17 +178,10 @@ class App extends React.Component {
                     db = new Date(b.date)
                     return db - da
                     })
-              }  />
-              
-              
+                    //need to be able to code the removeCharacter method here for the deletions to take place
+              }/> 
             </div>
-           
-          )
-
-          
-     
-    
-  }
+          )}
   }
 
 
