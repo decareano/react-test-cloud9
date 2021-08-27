@@ -106,6 +106,15 @@ import Table from './Table'
 
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
+import Splashout from './splashout';
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 class App extends React.Component {
   constructor(props) {
@@ -164,23 +173,39 @@ class App extends React.Component {
     const  { characters } = this.state;
     
     return (
-          
-            <div className="container">
-              <LoginButton />
-              
-              <LogoutButton /> 
-              <Form handleSubmit={this.handleSubmit} />
-              {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
-              
-              <Table marceloData={characters.sort((a, b) => {
+            <>
+            <Router>
                
-                    let da = new Date(a.date),
-                    db = new Date(b.date)
-                    return db - da
-                    })
-                    //need to be able to code the removeCharacter method here for the deletions to take place
-              }/> 
-            </div>
+            <Switch>
+                <Route path="/login">
+                  <LoginButton />
+                </Route>
+                <Route path="/splashout">
+                  <Splashout />
+                </Route>
+                <Route path="/">
+                  <LogoutButton />
+                  <Form handleSubmit={this.handleSubmit} /> 
+                  <Table marceloData={characters.sort((a, b) => {
+               
+                      let da = new Date(a.date),
+                      db = new Date(b.date)
+                      return db - da
+                  })
+               //need to be able to code the removeCharacter method here for the deletions to take place
+                }/> 
+                </Route>
+            </Switch>
+
+
+            </Router>
+                
+
+            
+              
+              
+              
+            </>
           )}
   }
 
