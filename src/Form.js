@@ -27,18 +27,17 @@ class Form extends Component {
     
 
     submitForm = () => {
-        this.props.handleSubmit(this.state)
-        this.setState(this.initialState)
-    }
-
+        // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
+        const newState = {
+          ...this.state,
+          id: Date.now()
+        }
+      
+        this.props.handleSubmit(newState);
+        this.setState(this.initialState);
+    } 
     
-    // removeData = character => {
-    //     const { characters } = this.state;
-    //     const newState = characters.filter(data => {
-    //       return data.uid !== character.uid;
-    //     });
-    //     this.setState({ characters: newState });
-    // }
+    
 
     render() {
         const { date, reading, pulse} = this.state;
