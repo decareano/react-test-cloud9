@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Auth0Provider } from "@auth0/auth0-react";
 
 
-
+// in class to ask. is index.js the entry point for all apps in react
 
 ReactDOM.render(
   <Auth0Provider
