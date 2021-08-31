@@ -157,7 +157,7 @@ class App extends React.Component {
   }
 
   removeCharacter = (removeId) =>  {
-    //resolved in class. 
+    //resolved in class
     const { characters } = this.state;
     console.log(removeId)
     this.setState({
@@ -165,9 +165,10 @@ class App extends React.Component {
         return character.id !== removeId;
       })
     })
+    
   }
 
-
+  
 
 
   render() {
@@ -192,7 +193,7 @@ class App extends React.Component {
                 let da = new Date(a.date),
                   db = new Date(b.date)
                 return db - da
-              })}  //line 196 contains the code added to return statement in class
+              })}  //line 196 contains the code added to return statement in class 
               removeCharacter={this.removeCharacter}
               />
             </Route>
