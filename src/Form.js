@@ -28,12 +28,12 @@ class Form extends Component {
 
     submitForm = () => {
         // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
-        // const newState = {
-        //   ...this.state,
-        //   id: Date.now()
-        // }
+        const newState = {
+          ...this.state,
+          id: Date.now()
+        }
       
-        this.props.handleSubmit(this.state);
+        this.props.handleSubmit(newState);
         this.setState(this.initialState);
     } 
     

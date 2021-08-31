@@ -21,7 +21,7 @@ const TableBody = (props) => {
                 <td>{fila.reading}</td>
                 <td>{fila.pulse}</td>
                 {/* //in class, we replace "index" by fila.id */}
-                <td><button type="button" className="btn btn-primary" onClick={() => props.removeCharacter(index)}>Delete</button></td>
+                <td><button type="button" className="btn btn-primary" onClick={() => props.removeCharacter(fila.id)}>Delete</button></td>
             </tr>
         )
     })

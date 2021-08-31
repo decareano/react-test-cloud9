@@ -156,22 +156,16 @@ class App extends React.Component {
     this.setState({ characters: [...this.state.characters, character] })
   }
 
-  removeCharacter = (index) =>  {
-    //resolved in class. 
-    // const { characters } = this.state;
-    // console.log(removeId)
-    // this.setState({
-    //   characters: characters.filter((character) => {
-    //     return character.id !== removeId;
-    //   })
-    // })
-    const {characters} = this.state
-        
-        this.setState({
-            characters: characters.filter((character, i) => {
-                return  i !== index
-            })
-        })
+  removeCharacter = (removeId) =>  {
+    //resolved in class
+    const { characters } = this.state;
+    console.log(removeId)
+    this.setState({
+      characters: characters.filter((character) => {
+        return character.id !== removeId;
+      })
+    })
+    
   }
 
   
