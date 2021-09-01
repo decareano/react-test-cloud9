@@ -1,20 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Auth0Provider } from "@auth0/auth0-react";
 
+import { BrowserRouter as Router } from "react-router-dom";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
-// in class to ask. is index.js the entry point for all apps in react
+import "./index.css";
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="dev-dqd-oq6b.us.auth0.com"
-    clientId="EC7ypdJS4x1v9q8qRQfibqeZskmPN9SX"
-    redirectUri={window.location.origin}
-  >
-    <App />
-  </Auth0Provider>,
-  document.getElementById('root')
+  <Router>
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
+  </Router>,
+  document.getElementById("root")
 );
