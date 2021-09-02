@@ -107,6 +107,7 @@ import Table from './Table'
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
 import Splashout from './splashout';
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 import {
@@ -115,6 +116,7 @@ import {
   Route,
   Link
 } from "react-router-dom"
+import AuthenticationButton from './authentication-button';
 
 class App extends React.Component {
   constructor(props) {
@@ -180,13 +182,14 @@ class App extends React.Component {
           {/* class tomorrow: after splashout I can go back to localhost:3000...Soetjl will look into it. to be resolved in next class */}
           <Switch>
             <Route path="/login">
-              <LoginButton />
+              <AuthenticationButton />
             </Route>
             <Route path="/splashout">
               <Splashout />
             </Route>
             <Route path="/">
               <LogoutButton />
+              {/* <AuthenticationButton /> */}
               <Form handleSubmit={this.handleSubmit} />
               <Table marceloData={characters.sort((a, b) => {
 
