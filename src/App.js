@@ -107,7 +107,7 @@ import Table from './Table'
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
 import Splashout from './splashout';
-import { useAuth0 } from "@auth0/auth0-react";
+
 
 
 import {
@@ -170,9 +170,7 @@ class App extends React.Component {
     
   }
 
-  
-
-
+   
   render() {
     const { characters } = this.state;
     console.log(characters)
