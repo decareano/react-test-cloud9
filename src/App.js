@@ -107,7 +107,10 @@ import Table from './Table'
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
 import Splashout from './splashout';
-
+import ProtectedRoute from "./protected-route";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import  Loading  from "./loading";
+import { withAuth0 } from "@auth0/auth0-react";
 
 
 import {
@@ -173,21 +176,23 @@ class App extends React.Component {
    
   render() {
     const { characters } = this.state;
-    console.log(characters)
+    
     return (
       <>
         <Router>
           {/* class tomorrow: after splashout I can go back to localhost:3000...Soetjl will look into it. to be resolved in next class */}
           <Switch>
-            <Route path="/login">
+            <Route path="/">
               <AuthenticationButton />
+              {/* <LoginButton /> */}
+              
             </Route>
             <Route path="/splashout">
               <Splashout />
             </Route>
-            <Route path="/">
+            <Route path="/accessApp">
               <LogoutButton />
-              {/* <AuthenticationButton /> */}
+              
               <Form handleSubmit={this.handleSubmit} />
               <Table marceloData={characters.sort((a, b) => {
 
@@ -214,4 +219,6 @@ class App extends React.Component {
 }
 
 
-export default App
+export default withAuthenticationRequired(App, {
+  onRedirecting: () => <Loading />,
+});
