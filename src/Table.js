@@ -21,7 +21,9 @@ const TableBody = (props) => {
                 <td>{fila.reading}</td>
                 <td>{fila.pulse}</td>
                 {/* //in class, we replace "index" by fila.id */}
-                <td><button type="button" className="btn btn-primary" onClick={() => props.removeCharacter(fila.id)}>Delete</button></td>
+                <td><button type="button" className="btn btn-primary" onClick={e =>
+                        window.confirm("Are you sure you wish to clear the page?") >
+                        props.removeCharacter(fila.id)}>Delete</button></td>
             </tr>
         )
     })
