@@ -176,21 +176,26 @@ class App extends React.Component {
    
   render() {
     const { characters } = this.state;
+    const { isLoading } = this.props.auth0;
+
+    if (isLoading) {
+      return <Loading />;
+    }
     
     return (
       <>
         <Router>
           {/* class tomorrow: after splashout I can go back to localhost:3000...Soetjl will look into it. to be resolved in next class */}
           <Switch>
-            <Route path="/">
-              <AuthenticationButton />
-              {/* <LoginButton /> */}
+            <Route path="/login">
+              {/* <AuthenticationButton /> */}
+              <LoginButton />
               
             </Route>
             <Route path="/splashout">
               <Splashout />
             </Route>
-            <Route path="/accessApp">
+            <Route path="/">
               <LogoutButton />
               
               <Form handleSubmit={this.handleSubmit} />
@@ -219,6 +224,6 @@ class App extends React.Component {
 }
 
 
-export default withAuthenticationRequired(App, {
+export default withAuth0(App, {
   onRedirecting: () => <Loading />,
 });
