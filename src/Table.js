@@ -5,8 +5,10 @@ const TableHeader = () => {
         <thead>
             <tr>
                 <th>Date</th>
-                <th>Reading</th>
+                <th>Systolic</th>
+                <th>Diastolic</th>
                 <th>Pulse</th>
+                <th>Edit</th>
                 <th>Remove</th>
             </tr>
         </thead>
@@ -18,9 +20,13 @@ const TableBody = (props) => {
         return(
             <tr key={index}>
                 <td>{fila.date}</td>
-                <td>{fila.reading}</td>
+                <td>{fila.systolic}</td>
+                <td>{fila.diastolic}</td>
                 <td>{fila.pulse}</td>
+                <td>{fila.edit}</td>
                 {/* //in class, we replace "index" by fila.id */}
+                {/* <td><button type="button" className="btn btn-primary" onClick={this.sayHello}>Edit</button></td> */}
+               
                 <td><button type="button" className="btn btn-primary" onClick={e =>
                         window.confirm("Are you sure you wish to clear the page?") >
                         props.removeCharacter(fila.id)}>Delete</button></td>

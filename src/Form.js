@@ -6,7 +6,8 @@ class Form extends Component {
     
         initialState = {
             date: '',
-            reading: '',
+            systolic: '',
+            diastolic: '',
             pulse: '',
         }
         state = this.initialState
@@ -36,11 +37,13 @@ class Form extends Component {
         this.props.handleSubmit(newState);
         this.setState(this.initialState);
     } 
+
+    
     
     
 
     render() {
-        const { date, reading, pulse} = this.state;
+        const { date, systolic, diastolic, pulse} = this.state;
         
 
         return (
@@ -56,8 +59,8 @@ class Form extends Component {
                
                {/* </Navbar> */}
                </nav>
-               <h3>Add new readings: </h3>
-
+               
+               <h1>Add new Readings: </h1>
                
            
                 <label htmlFor="date">Month-Day</label>
@@ -68,12 +71,19 @@ class Form extends Component {
                     //use defaultValue instead of value
                     value={date}
                     onChange={this.handleChange} />
-                <label htmlFor="reading">Blood Pressure Reading</label>
+                <label htmlFor="systolic">Systolic Pressure</label>
                 <input
                     type="text"
-                    name="reading"
-                    id="reading"
-                    value={reading}
+                    name="systolic"
+                    id="systolic"
+                    value={systolic}
+                    onChange={this.handleChange} />
+                <label htmlFor="diastolic">Diastolic Pressure</label>
+                <input
+                    type="text"
+                    name="diastolic"
+                    id="diastolic"
+                    value={diastolic}
                     onChange={this.handleChange} />
                 <label htmlFor="pulse">Pulse</label>
                 <input
