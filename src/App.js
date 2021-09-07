@@ -124,6 +124,7 @@ import AuthenticationButton from './authentication-button';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    
     if (!Firebase.apps.length) {
       Firebase.initializeApp(config)
     }
