@@ -1,9 +1,11 @@
 
 
 const config = {
+
   apiKey: "AIzaSyCT6autRJoyO2r_gQoCWySWSza8FeC2ykU",
   authDomain: "ultrasep30.firebaseapp.com",
   databaseURL: "https://ultrasep30-default-rtdb.firebaseio.com",
+  authDomain: "ultrasep30.firebaseapp.com",
   projectId: "ultrasep30",
   storageBucket: "ultrasep30.appspot.com",
   messagingSenderId: "821911078147",
