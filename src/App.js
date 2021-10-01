@@ -186,7 +186,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          {/* class tomorrow: after splashout I can go back to localhost:3000...Soetjl will look into it. to be resolved in next class */}
+          {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
             <Route path="/login">
               {/* <AuthenticationButton /> */}

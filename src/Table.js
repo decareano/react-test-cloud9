@@ -16,6 +16,7 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
+    
     const filas = props.marceloData.map((fila, index) => {
         return(
             <tr key={index}>
@@ -24,8 +25,8 @@ const TableBody = (props) => {
                 <td>{fila.diastolic}</td>
                 <td>{fila.pulse}</td>
                 <td>{fila.edit}</td>
-                {/* //in class, we replace "index" by fila.id */}
-                {/* <td><button type="button" className="btn btn-primary" onClick={this.sayHello}>Edit</button></td> */}
+                {/* //in class, we replace "index" by fila.id
+                <td><button type="button" className="btn btn-primary" onClick={this.sayHello}>Edit</button></td> */}
                
                 <td><button type="button" className="btn btn-primary" onClick={e =>
                         window.confirm("Are you sure you wish to clear the page?") >
