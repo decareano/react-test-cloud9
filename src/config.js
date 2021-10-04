@@ -1,7 +1,8 @@
 
 
 const config = {
-    
+
+
   apiKey: "AIzaSyCT6autRJoyO2r_gQoCWySWSza8FeC2ykU",
   authDomain: "ultrasep30.firebaseapp.com",
   databaseURL: "https://ultrasep30-default-rtdb.firebaseio.com",
