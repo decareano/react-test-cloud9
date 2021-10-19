@@ -31,25 +31,18 @@ function Form() {
         setPulse(event.target.value)
 
     }
-    
-   
-    
+
     const handleChange = (event) => {
         const { change, value } = event.target
         setChange({
             [change]: value
+        
         })
     }
     
-    const handleSubmit = (event) => {
-        //const { name, value } = event.target
-    }
-    
-
         return (
             <>
                 
-                {/* <Navbar bg="primary" variant="light"> */}
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary " >
                 
                <div className="col-lg-10" >
@@ -61,8 +54,15 @@ function Form() {
                </nav>
                
                <h1>Add new Readings: </h1>
+                <form
+                onSubmit={(event) => {
+                    event.preventDefault()
+
+                    event.handleChange(event)
+                }}
+                >
                
-           
+               
                 <label htmlFor="date">Month-Day</label>
                 <input 
                     type="text"
@@ -96,11 +96,12 @@ function Form() {
                 <input className="btn btn-primary"
                     type="button"
                     value="Submit"
-                    onClick={handleSubmit} />  
+                    onClick={handleChange} />  
+
+               </form>
 
                
             </>
-            
             
   
             
