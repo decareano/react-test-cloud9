@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Navbar } from 'react-bootstrap'
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-function Form() {
+function Form(props) {
     
     const [date, setDate] = useState('');
     const [systolic, setSystolic] = useState('');
@@ -33,11 +34,16 @@ function Form() {
     }
 
     const handleChange = (event) => {
-        const { change, value } = event.target
+        const { change, value } = event.target.value
         setChange({
             [change]: value
         
         })
+    }
+
+    const submitButton = () =>{
+        alert({change})
+       // handleSubmit(state)
     }
     
         return (
@@ -57,8 +63,8 @@ function Form() {
                 <form
                 onSubmit={(event) => {
                     event.preventDefault()
-
-                    event.handleChange(event)
+                    props.addPinga(change)
+                    
                 }}
                 >
                
@@ -97,7 +103,7 @@ function Form() {
                     type="button"
                     value="Submit"
                     onClick={handleChange} />  
-
+                {/* <button onClick={submitButton}>Submit Now</button> */}
                </form>
 
                
