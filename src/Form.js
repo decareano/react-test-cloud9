@@ -41,10 +41,14 @@ function Form(props) {
         })
     }
 
-    const submitButton = () =>{
-        alert({change})
-       // handleSubmit(state)
-    }
+    // const submitForm = () => {
+    //     // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
+        
+      
+    //     props.addChange(change);
+        
+       
+    // } 
     
         return (
             <>
@@ -63,7 +67,7 @@ function Form(props) {
                 <form
                 onSubmit={(event) => {
                     event.preventDefault()
-                    props.addPinga(change)
+                    props.add(change)
                     
                 }}
                 >
