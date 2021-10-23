@@ -18,6 +18,7 @@ const TableHeader = () => {
 const TableBody = (props) => {
     
     const filas = props.marceloData.map((fila, index) => {
+        console.log('fila', fila)
         return(
             <tr key={index}>
                 <td>{fila.date}</td>

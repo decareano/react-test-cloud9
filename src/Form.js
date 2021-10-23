@@ -8,7 +8,8 @@ function Form(props) {
     const [systolic, setSystolic] = useState('');
     const [diastolic, setDiastolic] = useState('');
     const [pulse, setPulse] = useState('');
-    const [change, setChange] = useState('');
+    // per john, no need for line 12
+    //const [change, setChange] = useState('');
     
     
 
@@ -29,16 +30,26 @@ function Form(props) {
     }
     
     const handlePulse = (event) => {
+        console.log(event.target.value)
         setPulse(event.target.value)
 
     }
 
-    const handleChange = (event) => {
-        const { change, value } = event.target.value
-        setChange({
-            [change]: value
+    // below function not needed
+    // const handleChange = (event) => {
+    //     const { change, value } = event.target
+    //     setChange({
+    //         [change]: value
+
         
-        })
+    //     })
+    // }
+    // john changed this from an inline code in return so an external function that is called on line 68 with the required onSubmit={handler}
+    const handleFormChange = (event) => {
+        event.preventDefault()
+        const data = {date, systolic, diastolic, pulse}
+        props.handleSubmit(data)
+        //event.handleChange(event)
     }
 
     const submitButton = () =>{
@@ -61,11 +72,9 @@ function Form(props) {
                
                <h1>Add new Readings: </h1>
                 <form
-                onSubmit={(event) => {
-                    event.preventDefault()
-                    props.addPinga(change)
-                    
-                }}
+
+                onSubmit={handleFormChange}
+
                 >
                
                
@@ -100,10 +109,13 @@ function Form(props) {
                     onChange={handlePulse} />
 
                 <input className="btn btn-primary"
-                    type="button"
+                    // john changed type to "submit" from button and there was no need for the onChange event
+                    type="submit"
                     value="Submit"
-                    onClick={handleChange} />  
-                {/* <button onClick={submitButton}>Submit Now</button> */}
+
+                />  
+
+
                </form>
 
                
