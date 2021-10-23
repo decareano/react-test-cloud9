@@ -34,11 +34,13 @@ function Form(props) {
         setPulse(event.target.value)
 
     }
+
     // below function not needed
     // const handleChange = (event) => {
     //     const { change, value } = event.target
     //     setChange({
     //         [change]: value
+
         
     //     })
     // }
@@ -48,6 +50,11 @@ function Form(props) {
         const data = {date, systolic, diastolic, pulse}
         props.handleSubmit(data)
         //event.handleChange(event)
+    }
+
+    const submitButton = () =>{
+        alert({change})
+       // handleSubmit(state)
     }
     
         return (
@@ -65,7 +72,9 @@ function Form(props) {
                
                <h1>Add new Readings: </h1>
                 <form
+
                 onSubmit={handleFormChange}
+
                 >
                
                
@@ -103,7 +112,9 @@ function Form(props) {
                     // john changed type to "submit" from button and there was no need for the onChange event
                     type="submit"
                     value="Submit"
+
                 />  
+
 
                </form>
 
