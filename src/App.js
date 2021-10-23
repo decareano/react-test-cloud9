@@ -159,6 +159,7 @@ class App extends React.Component {
   };
 
   handleSubmit = (character) => {
+    // deleted the spread operator...will I be able to print values????
     this.setState({ characters: [...this.state.characters, character] })
   }
 
@@ -202,12 +203,7 @@ class App extends React.Component {
               <LogoutButton />
               
               <Form handleSubmit={this.handleSubmit} />
-              <Table marceloData={characters.sort((a, b) => {
-
-                let da = new Date(a.date),
-                  db = new Date(b.date)
-                return db - da
-              })}  //line 196 contains the code added to return statement in class 
+              <Table marceloData={this.state.characters}  //line 196 contains the code added to return statement in class 
               removeCharacter={this.removeCharacter}
               />
             </Route>
