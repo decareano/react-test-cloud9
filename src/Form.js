@@ -45,7 +45,7 @@ function Form(props) {
     //     // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
         
       
-    //     props.addChange(change);
+    //     props.handleSubmit(change);
         
        
     // } 
@@ -65,10 +65,10 @@ function Form(props) {
                
                <h1>Add new Readings: </h1>
                 <form
-                onSubmit={(event) => {
-                    event.preventDefault()
-                    props.add(change)
+                onSubmit={event => {
+                   
                     
+                   handleChange(change);
                 }}
                 >
                
