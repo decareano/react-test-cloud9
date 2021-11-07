@@ -36,11 +36,13 @@ function Form(props) {
         setPulse(event.target.value)
 
     }
+
     // below function not needed
     // const handleChange = (event) => {
     //     const { change, value } = event.target
     //     setChange({
     //         [change]: value
+
         
     //     })
     // }
@@ -62,6 +64,11 @@ function Form(props) {
         setPulse('')
 
     }
+
+    const submitButton = () =>{
+        alert({change})
+       // handleSubmit(state)
+    }
     
         return (
             <>
@@ -78,7 +85,9 @@ function Form(props) {
                
                <h1>Add new Readings: </h1>
                 <form
+
                 onSubmit={handleFormChange}
+
                 >
                 <label htmlFor="date">Id</label>
                 <input 
@@ -131,6 +140,7 @@ function Form(props) {
                     value="Reset"
                     onClick={resetInputField} />
                
+
 
                </form>
 
