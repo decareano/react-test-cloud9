@@ -3,7 +3,7 @@ import { Container, Row, Col, Navbar } from 'react-bootstrap'
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Form(props) {
-    
+    const [id, setId] = useState(Date.now())
     const [date, setDate] = useState('');
     const [systolic, setSystolic] = useState('');
     const [diastolic, setDiastolic] = useState('');
@@ -11,7 +11,9 @@ function Form(props) {
     // per john, no need for line 12
     //const [change, setChange] = useState('');
     
-    
+    const handleId = (event) => {
+        setId(event.target.value)
+      }
 
 
     const handleDate = (event) => {
@@ -30,7 +32,7 @@ function Form(props) {
     }
     
     const handlePulse = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
         setPulse(event.target.value)
 
     }
@@ -44,12 +46,23 @@ function Form(props) {
         
     //     })
     // }
-    // john changed this from an inline code in return so an external function that is called on line 68 with the required onSubmit={handler}
+    // john changed this from an inline code in return to an external function that is called on line 68 with the required onSubmit={handler}
     const handleFormChange = (event) => {
         event.preventDefault()
-        const data = {date, systolic, diastolic, pulse}
+        // john first changed it to [] and later to {}. Confirmed it does not work with an array
+        const data = {id, date, systolic, diastolic, pulse}
         props.handleSubmit(data)
         //event.handleChange(event)
+        
+    }
+
+    const resetInputField = () => {
+        setId(Date.now());
+        setDate('');
+        setSystolic('');
+        setDiastolic('');
+        setPulse('')
+
     }
 
     const submitButton = () =>{
@@ -76,6 +89,14 @@ function Form(props) {
                 onSubmit={handleFormChange}
 
                 >
+                <label htmlFor="date">Id</label>
+                <input 
+                    type="text"
+                    name="id"
+                    id="id"
+                    //use defaultValue instead of value
+                    value={id}
+                    onChange={handleId} />
                
                
                 <label htmlFor="date">Month-Day</label>
@@ -112,13 +133,18 @@ function Form(props) {
                     // john changed type to "submit" from button and there was no need for the onChange event
                     type="submit"
                     value="Submit"
+                /> 
 
-                />  
+                    <input className="btn btn-primary"
+                    type="reset"
+                    value="Reset"
+                    onClick={resetInputField} />
+               
 
 
                </form>
 
-               
+               {/* <button onClick={resetInputField}>Reset</button> */}
             </>
             
   
