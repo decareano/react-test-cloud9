@@ -55,7 +55,7 @@ function Form(props) {
         //event.handleChange(event)
         
     }
-
+    // added by Marcelo. John please review
     const resetInputField = () => {
         setId(Date.now());
         setDate('');
@@ -65,10 +65,10 @@ function Form(props) {
 
     }
 
-    const submitButton = () =>{
-        alert({change})
-       // handleSubmit(state)
-    }
+    // const submitButton = () =>{
+    //     alert({change})
+    //    // handleSubmit(state)
+    // }
     
         return (
             <>
@@ -134,14 +134,12 @@ function Form(props) {
                     type="submit"
                     value="Submit"
                 /> 
-
-                    <input className="btn btn-primary"
+                // added by Marcelo. John review please   
+                <input className="btn btn-primary"
                     type="reset"
                     value="Reset"
                     onClick={resetInputField} />
                
-
-
                </form>
 
                {/* <button onClick={resetInputField}>Reset</button> */}
