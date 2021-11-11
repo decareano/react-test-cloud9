@@ -71,11 +71,12 @@ function Form(props) {
     // }
     
         return (
-            <>
+            <div className="container">
+                
                 
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary " >
-                
-               <div className="col-lg-10" >
+                {/* //john centered header below */}
+               <div style={{margin: "0 auto"}} >
                     <h1 class="text-end">Marcelo's Blood Pressure Readings</h1>
                     
                </div>
@@ -134,8 +135,10 @@ function Form(props) {
                     type="submit"
                     value="Submit"
                 /> 
-                // added by Marcelo. John review please   
+                {/* // added by Marcelo. John review please    */}
                 <input className="btn btn-primary"
+                    // john separates the button for me
+                    style = {{marginLeft: '10px'}}
                     type="reset"
                     value="Reset"
                     onClick={resetInputField} />
@@ -143,14 +146,7 @@ function Form(props) {
                </form>
 
                {/* <button onClick={resetInputField}>Reset</button> */}
-            </>
-            
-  
-            
-            
-            
-
-            
+            </div>
         )
     
 }
