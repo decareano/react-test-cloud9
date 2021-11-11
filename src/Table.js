@@ -2,6 +2,7 @@ import React from 'react'
 
 const TableHeader = () => {
    return (
+    
         <thead>
             <tr>
                 <th>Id</th>
@@ -13,6 +14,7 @@ const TableHeader = () => {
                 <th>Remove</th>
             </tr>
         </thead>
+   
     )
 }
 
@@ -46,11 +48,12 @@ const Table = (props) => {
         
         
         return (
+            <div className="container" style={{marginBottom: "5px", marginTop: "5px"}}>
             <table>
             <TableHeader />
             <TableBody marceloData={marceloData} removeCharacter={removeCharacter} />
             </table>
-
+            </div>
         )
    
 

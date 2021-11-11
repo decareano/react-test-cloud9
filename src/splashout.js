@@ -7,13 +7,18 @@ const Splashout = () => {
   const { logout } = useAuth0()
 
   return (
-    <button
-      className="btn btn-primary btn-block"
-      onClick={() => logout()}
-      
-    >
-      Good Bye
-    </button>
+    <div className="container">
+    {/* // <button
+    //   className="btn btn-primary btn-block"
+    //   onClick={() => logout()}
+    //   // grab paper and pencil and visualize what I want the page to look like 
+    //   // html code
+     
+    // >
+    //   Good Bye
+    // </button> */}
+    <h1 class="font-semibold text-center" style="font-size:52px">You Have Been Logged Out</h1>
+    </div>
   )
 };
 
