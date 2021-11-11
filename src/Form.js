@@ -55,7 +55,7 @@ function Form(props) {
         //event.handleChange(event)
         
     }
-
+    // added by Marcelo. John please review
     const resetInputField = () => {
         setId(Date.now());
         setDate('');
@@ -65,6 +65,7 @@ function Form(props) {
 
     }
 
+<<<<<<< HEAD
     // const submitForm = () => {
     //     // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
         
@@ -73,13 +74,20 @@ function Form(props) {
         
        
     // } 
+=======
+    // const submitButton = () =>{
+    //     alert({change})
+    //    // handleSubmit(state)
+    // }
+>>>>>>> fad53f6e143b736f81ccdde063d411f03a4cf1f5
     
         return (
-            <>
+            <div className="container">
+                
                 
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary " >
-                
-               <div className="col-lg-10" >
+                {/* //john centered header below */}
+               <div style={{margin: "0 auto"}} >
                     <h1 class="text-end">Marcelo's Blood Pressure Readings</h1>
                     
                </div>
@@ -138,25 +146,18 @@ function Form(props) {
                     type="submit"
                     value="Submit"
                 /> 
-
-                    <input className="btn btn-primary"
+                {/* // added by Marcelo. John review please    */}
+                <input className="btn btn-primary"
+                    // john separates the button for me
+                    style = {{marginLeft: '10px'}}
                     type="reset"
                     value="Reset"
                     onClick={resetInputField} />
                
-
-
                </form>
 
                {/* <button onClick={resetInputField}>Reset</button> */}
-            </>
-            
-  
-            
-            
-            
-
-            
+            </div>
         )
     
 }
