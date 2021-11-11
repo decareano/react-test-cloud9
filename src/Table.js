@@ -4,6 +4,7 @@ const TableHeader = () => {
    return (
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Date</th>
                 <th>Systolic</th>
                 <th>Diastolic</th>
@@ -18,8 +19,10 @@ const TableHeader = () => {
 const TableBody = (props) => {
     
     const filas = props.marceloData.map((fila, index) => {
+        console.log('fila', fila)
         return(
             <tr key={index}>
+                <td>{fila.id}</td>
                 <td>{fila.date}</td>
                 <td>{fila.systolic}</td>
                 <td>{fila.diastolic}</td>
