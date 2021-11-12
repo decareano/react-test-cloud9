@@ -65,7 +65,6 @@ function Form(props) {
 
     }
 
-<<<<<<< HEAD
     // const submitForm = () => {
     //     // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
         
@@ -74,12 +73,6 @@ function Form(props) {
         
        
     // } 
-=======
-    // const submitButton = () =>{
-    //     alert({change})
-    //    // handleSubmit(state)
-    // }
->>>>>>> fad53f6e143b736f81ccdde063d411f03a4cf1f5
     
         return (
             <div className="container">
