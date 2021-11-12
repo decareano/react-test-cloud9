@@ -1,3 +1,103 @@
+// import React, { Component } from 'react'
+// //import ReactDOM from 'react-dom'
+// //import logo from './logo.svg';
+// import config from './config'
+// import Form from './Form'
+// import './App.css';
+// import Table from './Table'
+// import firebase from 'firebase'
+
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props)
+//     if (!firebase.apps.length) {
+//       firebase.initializeApp(config);
+//    }else {
+//       firebase.app(); // if already initialized, use that one
+//    }
+
+//     this.state = {
+//       // we are gonna update the data through the form
+//       characters: []
+//     }
+
+//   }
+
+//   removeCharacter = (index) => {
+
+//     const {characters} = this.state
+//     this.setState({
+//       //setState simply updates and re-renders UI
+//       //it needs to be like below..character can be anything
+//       //and it returns the one you choose to delete.
+//       // index in the parameter can be anything
+//       characters: characters.filter((character, i) => {
+
+//           return i !== index
+//         })
+//       })
+//   }
+//   getUserData = () => {
+//     let ref = firebase.database().ref("/");
+//     ref.on("value", snapshot => {
+//       const state = snapshot.val();
+//       this.setState(state);
+//     });
+//     console.log('Data retrieved')
+//   };
+
+
+//   componentDidMount() {
+//     this.getUserData()
+//   }
+
+//   componentWillUnmount() {
+//     this.getUserData()
+//   }
+
+//   writeUserData = () => {
+//     firebase.database()
+//       .ref("/")
+//       .set(this.state);
+//     console.log("DATA SAVED");
+//   }
+
+
+
+//   handleSubmit = (character) => {
+//     this.setState({characters: [...this.state.characters, character]})
+//   }
+
+//   render() {
+
+//     let {characters} = this.state
+
+
+//     characters.sort((a, b) => {
+//       let da = new Date(a.date),
+//           db = new Date(b.date)
+//         return db - da
+//     })
+
+
+//     // characters.filter(character => character.date > "August 14, 2021")
+
+//     return (
+
+//       <div className="container">
+
+//         {/* <Table marceloData={characters.filter(character => character.date <= "August 16, 2021")} /> */}
+//         <Table marceloData={characters} removeCharacter={this.removeCharacter} />
+//         <Form handleSubmit={this.handleSubmit} />
+//       </div>
+
+//     )
+//   }
+// }
+
+// export default App
+
 import React from 'react'
 import Firebase from "firebase";
 import config from "./config";
@@ -59,7 +159,6 @@ class App extends React.Component {
   };
 
   handleSubmit = (character) => {
-    // deleted the spread operator...will I be able to print values????
     this.setState({ characters: [...this.state.characters, character] })
   }
 
@@ -77,6 +176,7 @@ class App extends React.Component {
 
   
 
+   
   render() {
     const { characters } = this.state;
     const { isLoading } = this.props.auth0;
@@ -84,7 +184,7 @@ class App extends React.Component {
     if (isLoading) {
       return <Loading />;
     }
-
+    
     return (
       <>
         <Router>
@@ -104,21 +204,28 @@ class App extends React.Component {
               <Form handleSubmit={this.handleSubmit} />
               <Table marceloData={characters.sort((a, b) => {
 
-                  let da = new Date(a.date),
+                let da = new Date(a.date),
                   db = new Date(b.date)
-                  //console.log(da)
-                  //console.log(db)
-                  return db - da
-              })}  removeCharacter={this.removeCharacter} />
+                return db - da
+              })}  //line 196 contains the code added to return statement in class 
+              removeCharacter={this.removeCharacter}
+              />
             </Route>
           </Switch>
 
 
         </Router>
+
+
+
+
+
+
       </>
     )
   }
 }
+
 
 export default withAuth0(App, {
   onRedirecting: () => <Loading />,
