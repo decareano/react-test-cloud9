@@ -13,7 +13,9 @@ const LoginButton = () => {
     <form method="post">
       <div class="sidenav">
          <div class="login-main-text">
-            <h2>Application Login Page</h2>
+         <div style={{color: '#7a21ff'}} >
+            <h1>Application Login Page</h1>
+          </div> 
             <p>Login or register from here to access.</p>
          </div>
       </div>
@@ -29,8 +31,9 @@ const LoginButton = () => {
                      <label>Password</label>
                      <input type="password" class="form-control" placeholder="Password"></input>
                   </div>
-                  <button type="submit" class="btn btn-black">Login</button>
-                  <button type="submit" class="btn btn-secondary">Register</button>
+                  <button type="submit" class="btn btn-primary"
+                  onClick={() => loginWithRedirect()}>Let me in</button>
+                 
                </form>
             </div>
          </div>
@@ -41,10 +44,10 @@ const LoginButton = () => {
   
 
      
-        <button 
+        {/* <button 
         type="submit" 
         class="btn btn-primary btn-block btn-large"
-        onClick={() => loginWithRedirect()}>Let me in.</button>
+        onClick={() => loginWithRedirect()}>Let me in.</button> */}
     </form>
 
 
