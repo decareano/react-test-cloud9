@@ -13,9 +13,9 @@ const LoginButton = () => {
     <form method="post">
       <div class="sidenav">
          <div class="login-main-text">
-         <div style={{color: '#7a21ff'}} >
-            <h1>Application Login Page</h1>
-          </div> 
+         
+         <h1 style={{color: "#6495ED"}}>You have been logout</h1>
+          
             <p>Login or register from here to access.</p>
          </div>
       </div>
