@@ -10,7 +10,7 @@ const LogoutButton = () => {
       
     <button
       className="btn btn-primary btn-block"
-      onClick={() => logout({ returnTo: "http://localhost:3000/splashout" })}
+      onClick={() => logout({ returnTo: "http://localhost:3000/login" })}
       
     >
       Log Out

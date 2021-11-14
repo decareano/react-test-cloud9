@@ -685,9 +685,16 @@ caption {
 
 .sidenav {
     height: 100%;
-    background-color: #008;
+    background-color: #009;
     overflow-x: hidden;
     padding-top: 20px;
+}
+
+.container {
+  border: 10px solid #aa00ff;
+  padding-top: 20px;
+  
+
 }
 
 
@@ -731,11 +738,20 @@ caption {
     }
 }
 
+#h1{
+  background-color: #29de7d;
+  color: #ff0077; 
+}
+
 
 .login-main-text{
     margin-top: 30%;
     padding: 60px;
-    color: #e25098;
+    color: #29de7d;
+    
+    
+      
+    
 }
 
 .login-main-text h2{
