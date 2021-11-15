@@ -75,7 +75,6 @@ class App extends React.Component {
     
   }
 
-  
 
   render() {
     const { characters } = this.state;
@@ -87,7 +86,9 @@ class App extends React.Component {
 
     return (
       <>
+     
         <Router>
+       
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
             <Route path="/login">
@@ -98,7 +99,8 @@ class App extends React.Component {
             <Route path="/splashout">
               <Splashout />
             </Route>
-            <Route path="/">
+            <ProtectedRoute path="/" >
+              
               <LogoutButton />
               
               <Form handleSubmit={this.handleSubmit} />
@@ -110,13 +112,12 @@ class App extends React.Component {
                   //console.log(db)
                   return db - da
               })}  removeCharacter={this.removeCharacter} />
-            </Route>
+            </ProtectedRoute>
           </Switch>
 
 
         </Router>
       </
-      
       >
     )
   }
