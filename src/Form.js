@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Navbar } from 'react-bootstrap'
 import { propTypes } from 'react-bootstrap/esm/Image';
+import LogoutButton from './logout-button';
+
 
 function Form(props) {
     const [id, setId] = useState(Date.now())
@@ -64,8 +66,6 @@ function Form(props) {
         setPulse('')
 
     }
-
-    
 
     // const submitForm = () => {
     //     // edit in class: using ...this.state, id: Date.now() adds an ID or uniqueness to the item. then we pass the newState as props to handleSubmit method
@@ -149,6 +149,9 @@ function Form(props) {
                     type="reset"
                     value="Reset"
                     onClick={resetInputField} />
+                    <div style={{float: 'right'}}>
+                    <LogoutButton />
+                    </div>
                
                </form>
 

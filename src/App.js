@@ -6,7 +6,7 @@ import Table from './Table'
 
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
-import Splashout from './splashout';
+//import Splashout from './splashout';
 import ProtectedRoute from "./protected-route";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import  Loading  from "./loading";
@@ -96,12 +96,12 @@ class App extends React.Component {
               <LoginButton />
               
             </Route>
-            <Route path="/splashout">
+            {/* <Route path="/splashout">
               <Splashout />
-            </Route>
+            </Route> */}
             <ProtectedRoute path="/" >
               
-              <LogoutButton />
+              {/* <LogoutButton /> */}
               
               <Form handleSubmit={this.handleSubmit} />
               <Table marceloData={characters.sort((a, b) => {
