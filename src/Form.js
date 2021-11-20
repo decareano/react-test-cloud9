@@ -149,6 +149,7 @@ function Form(props) {
                     type="reset"
                     value="Reset"
                     onClick={resetInputField} />
+                    {/* // to move button to the right I created a div */}
                     <div style={{float: 'right'}}>
                     <LogoutButton />
                     </div>
