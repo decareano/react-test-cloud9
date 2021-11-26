@@ -11,7 +11,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import  Loading  from "./loading";
 import { withAuth0 } from "@auth0/auth0-react";
 import MainApp from './main-app';
-
+import AuthenticationButton from './authentication-button';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ import {
   Route,
   Link
 } from "react-router-dom"
-import AuthenticationButton from './authentication-button';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -77,7 +77,7 @@ class App extends React.Component {
 
 
   render() {
-    //const { characters } = this.state;
+    const { characters } = this.state;
     const { isLoading } = this.props.auth0;
 
     if (isLoading) {
@@ -92,20 +92,16 @@ class App extends React.Component {
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
             <Route path="/login">
-              {/* <AuthenticationButton /> */}
-              <LoginButton />
-              
+              <AuthenticationButton />
+              {/* <LoginButton /> */}
             </Route>
-            {/* <Route path="/splashout">
-              <Splashout />
-            </Route> */}
-            <ProtectedRoute path="/mainapp" >
-              
-             <MainApp />
-            </ProtectedRoute>
+           
+            <Route path="/" >
+              <MainApp />
+            </Route>
+
+            {/* //Soetji class: I would like to add a new page/route called Blood_Oxygen somewhere here */}
           </Switch>
-
-
         </Router>
       </
       >
