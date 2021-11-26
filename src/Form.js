@@ -84,7 +84,7 @@ function Form(props) {
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary " >
                 {/* //john centered header below */}
                <div style={{margin: "0 auto"}} >
-                    <h1 class="text-end">Marcelo's Blood Pressure Readings</h1>
+                    <h1 class="text-end">Blood Pressure Readings</h1>
                     
                </div>
                
