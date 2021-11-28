@@ -12,7 +12,8 @@ import  Loading  from "./loading";
 import { withAuth0 } from "@auth0/auth0-react";
 import MainApp from './main-app';
 import AuthenticationButton from './authentication-button';
-import {Navbar, Nav, NavItem, Container } from 'react-bootstrap';
+import BloodOxygen from './blood_oxygen'
+
 
 
 
@@ -92,29 +93,19 @@ class App extends React.Component {
      
         <Router>
         
-        
-            <Navbar bg="light">
-            <Container>
-                <Navbar.Brand href="#home">Menu Pages</Navbar.Brand>
-                    <Nav className="me-auto">
-                <Nav.Link href="#blood_oxygen">Blood Oxygen Levels</Nav.Link>
-                <Nav.Link href="#weight">Weight</Nav.Link>
-                <Nav.Link href="#bmiIndex">BMI Index</Nav.Link>
-                    </Nav>
-            </Container>
-          </Navbar>
-         
-            
-       
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
             <Route path="/login">
-              <AuthenticationButton />
-              {/* <LoginButton /> */}
+              {/* <AuthenticationButton /> */}
+              <LoginButton />
             </Route>
            
             <Route path="/" >
               <MainApp />
+            </Route>
+
+            <Route path="#blood_oxygen" >
+              <BloodOxygen  />
             </Route>
 
             {/* //Soetji class: I would like to add a new page/route called Blood_Oxygen somewhere here */}
