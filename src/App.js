@@ -12,6 +12,7 @@ import  Loading  from "./loading";
 import { withAuth0 } from "@auth0/auth0-react";
 import MainApp from './main-app';
 import AuthenticationButton from './authentication-button';
+import BloodOxygen from './blood_oxygen'
 
 import {
   BrowserRouter as Router,
@@ -86,11 +87,18 @@ class App extends React.Component {
 
     return (
       <>
+        
+            
      
         <Router>
        
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
+
+            <Route path="/blood_oxygen">
+                <BloodOxygen />
+            </Route>
+              
             <Route path="/login">
               <AuthenticationButton />
               {/* <LoginButton /> */}
