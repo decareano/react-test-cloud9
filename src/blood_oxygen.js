@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export default function BloodOxygen() {
@@ -14,3 +15,6 @@ export default function BloodOxygen() {
   
   );
 }
+
+export default BloodOxygen
+
