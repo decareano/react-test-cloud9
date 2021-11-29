@@ -15,8 +15,6 @@ import AuthenticationButton from './authentication-button';
 import BloodOxygen from './blood_oxygen'
 
 
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -90,11 +88,18 @@ class App extends React.Component {
 
     return (
       <>
+        
+            
      
         <Router>
         
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
+
+            <Route path="/blood_oxygen">
+                <BloodOxygen />
+            </Route>
+              
             <Route path="/login">
               {/* <AuthenticationButton /> */}
               <LoginButton />

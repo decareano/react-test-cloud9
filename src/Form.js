@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+
 import { Container, Row, Col, Navbar, Nav, NavItem } from 'react-bootstrap'
+
 import { propTypes } from 'react-bootstrap/esm/Image';
 import LogoutButton from './logout-button';
 
@@ -81,6 +83,7 @@ function Form(props) {
             <>
             
             <div className="container">
+
             
             <Navbar bg="light">
             <Container>
@@ -93,7 +96,7 @@ function Form(props) {
             </Container>
           </Navbar>
         
-          
+
                 
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary " >
                 {/* //john centered header below */}
