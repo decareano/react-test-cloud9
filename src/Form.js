@@ -81,7 +81,9 @@ function Form(props) {
             <div className="container">
                 <Navbar bg="light">
             <Container>
+                
                 <Navbar.Brand href="/home">Menu Pages</Navbar.Brand>
+               
                     <Nav className="me-auto">
                 <Nav.Link href="/blood_oxygen">Blood Oxygen Levels</Nav.Link>
                 <Nav.Link href="/weight">Weight</Nav.Link>
