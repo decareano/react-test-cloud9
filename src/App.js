@@ -14,6 +14,7 @@ import MainApp from './main-app';
 import AuthenticationButton from './authentication-button';
 import BloodOxygen from './blood_oxygen'
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -91,7 +92,7 @@ class App extends React.Component {
             
      
         <Router>
-       
+        
           {/* class tomorrow: after splashout I can go back to localhost:3000.... to be resolved in next class */}
           <Switch>
 
@@ -100,12 +101,16 @@ class App extends React.Component {
             </Route>
               
             <Route path="/login">
-              <AuthenticationButton />
-              {/* <LoginButton /> */}
+              {/* <AuthenticationButton /> */}
+              <LoginButton />
             </Route>
            
             <Route path="/" >
               <MainApp />
+            </Route>
+
+            <Route path="#blood_oxygen" >
+              <BloodOxygen  />
             </Route>
 
             {/* //Soetji class: I would like to add a new page/route called Blood_Oxygen somewhere here */}
